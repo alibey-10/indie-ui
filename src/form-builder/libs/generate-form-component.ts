@@ -169,11 +169,7 @@ export const getFormElementCode = (field: FormElement) => {
               control={form.control}
               name="${field.name}"
               render={({ field }) => {
-              const options = [
-                      { value: '1', label: 'Option 1' },
-                      { value: '2', label: 'Option 2' },
-                      { value: '2', label: 'Option 3' },
-                    ]
+              const options = ${JSON.stringify(field.options)};
               return (
                 <FormItem className="w-full">
                   ${field.label && `<FormLabel>${field.label}</FormLabel> ${field.required ? '*' : ''}`}
@@ -206,11 +202,7 @@ export const getFormElementCode = (field: FormElement) => {
           control={form.control}
           name="${field.name}"
           render={({ field }) => {
-          const options =[
-            { value: 'option-1', label: 'Option 1' },
-            { value: 'option-2', label: 'Option 2' },
-            { value: 'option-3', label: 'Option 3' },
-          ]
+          const options = ${JSON.stringify(field.options)};
           return (
             <FormItem>
               ${field.label && `<FormLabel>${field.label}</FormLabel> ${field.required ? '*' : ''}`}
